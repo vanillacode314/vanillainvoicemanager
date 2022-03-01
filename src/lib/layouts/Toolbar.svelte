@@ -57,6 +57,7 @@
 <style lang="scss">
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
 	}
 </style>

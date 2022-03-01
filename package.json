@@ -29,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "svelte-local-storage-store": "^0.2.6"
   }
 }
