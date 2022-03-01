@@ -65,7 +65,7 @@ export function addItem(
 	invoice: Invoice,
 	{ title = '', description = '', type = '', price = 0, currency = 'USD', amount = 1 } = {}
 ) {
-	if (!(title && description && type && price)) return;
+	if (!(title && currency && type && price)) return;
 	const id = getId(invoice.items.map((item) => item.id));
 	const item: Item = {
 		id,

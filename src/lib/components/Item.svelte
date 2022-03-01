@@ -24,7 +24,13 @@
 		<Text>Title: <strong>{item.title}</strong></Text>
 		<Text>Description: <strong>{item.description || 'None'}</strong></Text>
 		<Text>Amount: <strong>{item.amount}</strong></Text>
-		<Text>Price: <strong>{item.price} {item.currency}</strong></Text>
+		<Text
+			>Price: <strong
+				>{item.price}
+				{item.currency} &Cross; {item.amount} = {item.price * item.amount}
+				{item.currency}</strong
+			></Text
+		>
 	</Card.Section>
 
 	<Card.Footer>
