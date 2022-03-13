@@ -31,7 +31,7 @@
 	<Overlay.Backdrop />
 
 	<Overlay.Section>
-		<Card.Container palette="auto" max_width="75">
+		<Card.Container palette="auto" width={['50', 'mobile:75']}>
 			<Card.Header>Create Invoice</Card.Header>
 
 			<Card.Section>
