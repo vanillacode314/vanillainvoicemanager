@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { type Invoice } from '$lib/utils/tasks';
+	import type { Invoice } from '$lib/utils/tasks';
 
 	// Icons
-	import IconPlay from '~icons/mdi/play';
-	import IconPause from '~icons/mdi/pause';
 	import { Tile, Button, Text, Badge } from '@kahi-ui/framework';
 	import { goto } from '$app/navigation';
 	export let invoice: Invoice;
@@ -13,7 +11,7 @@
 	}
 </script>
 
-<Tile.Container palette="auto">
+<Tile.Container palette="auto" on:click={gotoInvoice} style="cursor: pointer;">
 	<Tile.Section>
 		<Tile.Header
 			>{invoice.title}<Badge palette="accent" shape="rounded">{invoice.id}</Badge></Tile.Header
@@ -30,6 +28,6 @@
 	</Tile.Section>
 
 	<Tile.Footer>
-		<Button variation="clear" on:click={gotoInvoice}>More</Button>
+		<!-- <Button variation="clear" on:click={gotoInvoice}>More</Button> -->
 	</Tile.Footer>
 </Tile.Container>
