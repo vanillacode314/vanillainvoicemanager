@@ -5,7 +5,11 @@
 
 	import { Button } from '@kahi-ui/framework';
 	function exportAllInvoices() {
-		exportToJsonFile($invoices);
+		if ($invoices?.length) {
+			exportToJsonFile($invoices);
+		} else {
+			alert('No invoices to export :(');
+		}
 	}
 
 	function importInvoice() {
