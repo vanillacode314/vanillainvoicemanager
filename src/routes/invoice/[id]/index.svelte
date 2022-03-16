@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
 	import { page } from '$app/stores';
 	import { invoices, selectedInvoice } from '$lib/stores/app';
 
@@ -27,8 +29,10 @@
 	<!-- <TaskDashboard {invoice} /> -->
 	<InvoiceDashboard {invoice} />
 	<div class="log">
-		{#each invoice.items as item}
-			<Item {item} />
+		{#each invoice.items as item (item.id)}
+			<div animate:flip={{ duration: 300 }} transition:fade|local>
+				<Item {item} />
+			</div>
 		{/each}
 	</div>
 </div>
