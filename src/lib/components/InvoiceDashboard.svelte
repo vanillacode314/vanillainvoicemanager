@@ -29,13 +29,18 @@
 	function add() {
 		$selectedInvoice = invoice;
 	}
+
+	function onPaidChanged() {
+		$invoices = $invoices;
+	}
 </script>
 
-<Card.Container class="card-preview" palette="affirmative">
+<Card.Container class="card-preview" palette={invoice.paid ? 'affirmative' : 'negative'}>
 	<Card.Header>
 		{invoice.title}
 		<Spacer />
-		<Badge shape="pill" palette="accent">ID: {invoice.id}</Badge>
+		<Badge radius="tiny" palette="informative">{invoice.paid ? 'Paid' : 'Unpaid'}</Badge>
+		<Badge radius="tiny" palette="informative">ID: {invoice.id}</Badge>
 	</Card.Header>
 
 	<Card.Section>
@@ -62,10 +67,11 @@
 		<Button is="a" palette="auto" href="/pdf/{invoice.id}">Print</Button>
 		<Button on:click={exportInvoice}>Export</Button>
 		<Button
+			is="label"
 			palette="negative"
 			on:click={() => ($selectedInvoice = invoice)}
 			for="invoice-delete-overlay">Delete</Button
 		>
-		<!-- <Switch bind:state={task.paid} on:change={onPaidChanged} palette="accent">Paid</Switch> -->
+		<Switch bind:state={invoice.paid} on:change={onPaidChanged} palette="auto">Paid</Switch>
 	</Card.Footer>
 </Card.Container>

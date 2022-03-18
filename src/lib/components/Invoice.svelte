@@ -2,7 +2,7 @@
 	import type { Invoice } from '$lib/utils/tasks';
 
 	// Icons
-	import { Tile, Button, Text, Badge } from '@kahi-ui/framework';
+	import { Tile, Text, Badge } from '@kahi-ui/framework';
 	import { goto } from '$app/navigation';
 	export let invoice: Invoice;
 
@@ -14,7 +14,10 @@
 <Tile.Container palette="auto" on:click={gotoInvoice} style="cursor: pointer;">
 	<Tile.Section>
 		<Tile.Header
-			>{invoice.title}<Badge palette="accent" shape="rounded">{invoice.id}</Badge></Tile.Header
+			>{invoice.title}<Badge palette="informative" radius="tiny">{invoice.id}</Badge><Badge
+				palette={invoice.paid ? 'affirmative' : 'negative'}
+				radius="tiny">{invoice.paid ? 'Paid' : 'Unpaid'}</Badge
+			></Tile.Header
 		>
 		<Text is="small">
 			Date Issued: <strong>{new Date(invoice.date_of_issue).toLocaleString()}</strong>

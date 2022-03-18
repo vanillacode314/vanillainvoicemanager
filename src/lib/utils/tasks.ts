@@ -14,6 +14,7 @@ export interface Item {
 export interface Invoice {
 	id: number;
 	title: string;
+	paid: boolean;
 	date_of_issue: Timestamp;
 	senders_name: string;
 	senders_address: string;
@@ -46,6 +47,7 @@ export function createInvoice({
 			date_of_issue: Date.now(),
 			senders_name,
 			senders_address,
+			paid: false,
 			recipients_name,
 			recipients_address,
 			items: []
@@ -55,7 +57,7 @@ export function createInvoice({
 	});
 }
 
-export function removeTask(id: number) {
+export function removeInvoice(id: number) {
 	invoices.update((val) => {
 		return val.filter((invoice) => invoice.id != id);
 	});

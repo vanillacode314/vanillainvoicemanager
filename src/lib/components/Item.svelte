@@ -39,8 +39,11 @@
 		<!-- 	on:click={() => ($selectedActivity = act)} -->
 		<!-- 	for="comment-activity-overlay">Comment</Button -->
 		<!-- > -->
-		<Button palette="negative" for="item-delete-overlay" on:click={() => ($selectedItem = item)}
-			>Delete</Button
+		<Button
+			is="label"
+			palette="negative"
+			for="item-delete-overlay"
+			on:click={() => ($selectedItem = item)}>Delete</Button
 		>
 	</Card.Footer>
 </Card.Container>
