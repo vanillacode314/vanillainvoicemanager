@@ -1,0 +1,35 @@
+@media print {
+	@page {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	body {
+		padding-top: 72px;
+		padding-bottom: 72px;
+	}
+}
+h1 {
+	font-size: xx-large;
+	font-weight: bold;
+}
+h2 {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+main {
+	width: 100%;
+}
+
+table {
+	width: 100%;
+	td {
+		padding: 0.3rem;
+		border: 1px solid black;
+	}
+	thead {
+		td {
+			font-weight: bold;
+		}
+	}
+}

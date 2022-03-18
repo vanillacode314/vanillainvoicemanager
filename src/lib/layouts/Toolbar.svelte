@@ -52,7 +52,7 @@
 </script>
 
 <nav aria-label="toolbar">
-	<Button palette="accent" for="create-invoice-overlay">Create Invoice</Button>
+	<Button is="label" palette="accent" for="create-invoice-overlay">Create Invoice</Button>
 	<Button on:click={exportAllInvoices}>Export All Invoices</Button>
 	<Button on:click={importInvoice}>Import Invoices</Button>
 	<Button on:click={importSingleInvoice}>Import Single Invoices</Button>

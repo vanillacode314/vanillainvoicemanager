@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Invoices from '$lib/layouts/Invoices.svelte';
 	import Toolbar from '$lib/layouts/Toolbar.svelte';
+	import '@kahi-ui/framework/dist/kahi-ui.framework.min.css';
+	import '@kahi-ui/framework/dist/kahi-ui.theme.default.min.css';
 </script>
 
 <div class="wrapper">

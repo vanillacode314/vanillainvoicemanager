@@ -57,8 +57,9 @@
 	</Card.Section>
 
 	<Card.Footer>
-		<Button on:click={add} palette="accent" for="add-item-overlay">Add Item</Button>
+		<Button is="label" on:click={add} palette="accent" for="add-item-overlay">Add Item</Button>
 		<!-- <Button on:click={() => ($selectedTask = task)} for="task-edit-overlay">Edit</Button> -->
+		<Button is="a" palette="auto" href="/pdf/{invoice.id}">Print</Button>
 		<Button on:click={exportInvoice}>Export</Button>
 		<Button
 			palette="negative"

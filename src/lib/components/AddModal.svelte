@@ -38,14 +38,20 @@
 				<Form.Control>
 					<Form.Label for="title">Title</Form.Label>
 					<TextInput name="title" bind:value={title} required />
-					<Form.Label for="sname">Sender's Name</Form.Label>
-					<TextInput name="sname" bind:value={senders_name} />
-					<Form.Label for="saddress">Sender's Address</Form.Label>
-					<TextInput name="saddress" is="textarea" bind:value={senders_address} />
-					<Form.Label for="rname">Recipient's Name</Form.Label>
-					<TextInput name="rname" bind:value={recipients_name} />
-					<Form.Label for="raddress">Recipient's Address</Form.Label>
-					<TextInput name="raddress" is="textarea" bind:value={recipients_address} />
+					<Form.FieldSet>
+						<Form.Legend>Sender's Info</Form.Legend>
+						<Form.Label for="sname">Name</Form.Label>
+						<TextInput name="sname" bind:value={senders_name} />
+						<Form.Label for="saddress">Address</Form.Label>
+						<TextInput name="saddress" is="textarea" bind:value={senders_address} />
+					</Form.FieldSet>
+					<Form.FieldSet>
+						<Form.Legend>Recipient's Info</Form.Legend>
+						<Form.Label for="rname">Name</Form.Label>
+						<TextInput name="rname" bind:value={recipients_name} />
+						<Form.Label for="raddress">Address</Form.Label>
+						<TextInput name="raddress" is="textarea" bind:value={recipients_address} />
+					</Form.FieldSet>
 				</Form.Control>
 			</Card.Section>
 

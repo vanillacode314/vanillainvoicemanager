@@ -5,7 +5,6 @@
 	import DeleteItemModal from '$lib/components/DeleteItemModal.svelte';
 
 	import '../app.scss';
-	import '@kahi-ui/framework/dist/kahi-ui.framework.min.css';
 </script>
 
 <main>
