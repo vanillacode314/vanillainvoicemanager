@@ -61,7 +61,7 @@
 		</Text>
 	</Card.Section>
 
-	<Card.Footer>
+	<Card.Footer style="flex-wrap: wrap">
 		<Button is="label" on:click={add} palette="accent" for="add-item-overlay">Add Item</Button>
 		<!-- <Button on:click={() => ($selectedTask = task)} for="task-edit-overlay">Edit</Button> -->
 		<Button is="a" palette="auto" href="/pdf/{invoice.id}">Print</Button>
