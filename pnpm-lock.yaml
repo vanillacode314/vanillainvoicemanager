@@ -7,6 +7,7 @@ specifiers:
   '@sveltejs/adapter-netlify': ^1.0.0-next.51
   '@sveltejs/kit': next
   normalize.css: ^8.0.1
+  number-to-words: ^1.2.4
   prettier: ^2.6.0
   prettier-plugin-svelte: ^2.6.0
   sass: ^1.49.9
@@ -20,6 +21,7 @@ specifiers:
 
 dependencies:
   normalize.css: 8.0.1
+  number-to-words: 1.2.4
   svelte-local-storage-store: 0.2.6_svelte@3.46.4
 
 devDependencies:
@@ -780,6 +782,10 @@ packages:
     dependencies:
       path-key: 3.1.1
     dev: true
+
+  /number-to-words/1.2.4:
+    resolution: {integrity: sha512-/fYevVkXRcyBiZDg6yzZbm0RuaD6i0qRfn8yr+6D0KgBMOndFPxuW10qCHpzs50nN8qKuv78k8MuotZhcVX6Pw==}
+    dev: false
 
   /once/1.4.0:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}

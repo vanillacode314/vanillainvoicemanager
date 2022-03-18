@@ -1,7 +1,10 @@
 <script lang="ts">
+	import * as ntw from 'number-to-words';
+	console.log(ntw);
 	import { page } from '$app/stores';
 	import { invoices } from '$lib/stores/app';
 	import type { Invoice } from '$lib/utils/tasks';
+	import { add } from '$lib/utils';
 	import { onMount } from 'svelte';
 
 	/// State
@@ -75,6 +78,12 @@
 			</tr>
 		{/each}
 	</table>
+	<div class="bill-in-words">
+		<em>
+			{ntw.toWords(invoice.items.map((item) => item.price * item.amount).reduce(add, 0))}
+			<strong>{invoice.items[0].currency}</strong>
+		</em>
+	</div>
 </main>
 
 <style lang="scss">
@@ -82,5 +91,13 @@
 		p {
 			margin: 0;
 		}
+	}
+	.bill-in-words {
+		border: 1px solid black;
+		margin-block: 1rem;
+		padding: 1rem;
+		box-sizing: border-box;
+		font-size: x-large;
+		text-transform: lowercase;
 	}
 </style>
