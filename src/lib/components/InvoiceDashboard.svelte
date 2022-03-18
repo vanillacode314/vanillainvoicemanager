@@ -23,7 +23,7 @@
 	// }
 	//
 	function exportInvoice() {
-		exportToJsonFile(invoice, `${invoice.id}-${invoice.title}`.replaceAll(' ', '-'));
+		exportToJsonFile(invoice, `${invoice.id}-${invoice.title}`.replace(/\s/g, '-'));
 	}
 
 	function add() {
