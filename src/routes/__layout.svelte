@@ -7,6 +7,10 @@
 	import '../app.scss';
 </script>
 
+<svelte:head>
+	<title>VanillaInvoiceManager</title>
+</svelte:head>
+
 <main>
 	<slot />
 </main>
