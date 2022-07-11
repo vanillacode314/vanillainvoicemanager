@@ -15,13 +15,13 @@
 
 	onMount(() => {
 		const reloaded = window.localStorage.getItem('reloaded');
-		// if (+reloaded) {
-		// 	window.print();
-		// 	window.localStorage.setItem('reloaded', '0');
-		// } else {
-		// 	window.localStorage.setItem('reloaded', '1');
-		// 	window.location.reload();
-		// }
+		if (+reloaded) {
+			window.print();
+			window.localStorage.setItem('reloaded', '0');
+		} else {
+			window.localStorage.setItem('reloaded', '1');
+			window.location.reload();
+		}
 	});
 </script>
 
