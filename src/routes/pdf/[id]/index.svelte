@@ -25,86 +25,80 @@
 	});
 </script>
 
-<div class="container">
-	<header>
-		<h1>
-			{invoice.title}
-		</h1>
-		<h3>(ID: {invoice.id})</h3>
-	</header>
-	<main>
+<header>
+	<h1>
+		{invoice.title}
+	</h1>
+	<h3>(ID: {invoice.id})</h3>
+</header>
+<main>
+	<p>
+		<strong>Date of Issue:</strong>
+		{issueDate}
+	</p>
+	<div class="senders-info">
+		<span class="label">Sender's Info</span>
 		<p>
-			<strong>Date of Issue:</strong>
-			{issueDate}
+			<strong>Sender's Name:</strong>
+			{invoice.senders_name}
 		</p>
-		<div class="senders-info">
-			<span class="label">Sender's Info</span>
-			<p>
-				<strong>Sender's Name:</strong>
-				{invoice.senders_name}
-			</p>
-			<p>
-				<strong>Sender's Address:</strong>
-				{invoice.senders_address}
-			</p>
-		</div>
-		<div class="recipients-info">
-			<span class="label">Recipient's Info</span>
-			<p>
-				<strong>Recipient's Name:</strong>
-				{invoice.recipients_name}
-			</p>
-			<p>
-				<strong>Recipient's Address:</strong>
-				{invoice.recipients_address}
-			</p>
-		</div>
-		<table class="log">
-			<thead>
+		<p>
+			<strong>Sender's Address:</strong>
+			{invoice.senders_address}
+		</p>
+	</div>
+	<div class="recipients-info">
+		<span class="label">Recipient's Info</span>
+		<p>
+			<strong>Recipient's Name:</strong>
+			{invoice.recipients_name}
+		</p>
+		<p>
+			<strong>Recipient's Address:</strong>
+			{invoice.recipients_address}
+		</p>
+	</div>
+	<table class="log">
+		<thead>
+			<tr>
+				<td id="caption" colspan="7"> Items </td>
+			</tr>
+			<tr>
+				<td> ID </td>
+				<td> Type </td>
+				<td> Title </td>
+				<td> Price </td>
+				<td> Amount </td>
+				<td> Total </td>
+				<td> Description </td>
+			</tr>
+		</thead>
+		<tbody>
+			{#each invoice.items as item (item.id)}
 				<tr>
-					<td id="caption" colspan="7"> Items </td>
+					<td> {item.id} </td>
+					<td> {item.type === 'good' ? 'Goods' : 'Services'} </td>
+					<td> {item.title} </td>
+					<td> {item.price} {item.currency} </td>
+					<td> {item.amount} </td>
+					<td> {item.price * item.amount} {item.currency} </td>
+					<td class="break"> {item.description} </td>
 				</tr>
-				<tr>
-					<td> ID </td>
-					<td> Type </td>
-					<td> Title </td>
-					<td> Price </td>
-					<td> Amount </td>
-					<td> Total </td>
-					<td> Description </td>
-				</tr>
-			</thead>
-			<tbody>
-				{#each invoice.items as item (item.id)}
-					<tr>
-						<td> {item.id} </td>
-						<td> {item.type === 'good' ? 'Goods' : 'Services'} </td>
-						<td> {item.title} </td>
-						<td> {item.price} {item.currency} </td>
-						<td> {item.amount} </td>
-						<td> {item.price * item.amount} {item.currency} </td>
-						<td class="break"> {item.description} </td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-		<div class="bill-in-words">
-			<em>
-				{ntw.toWords(invoice.items.map((item) => item.price * item.amount).reduce(add, 0))}
-				<strong>{invoice.items[0].currency}</strong>
-			</em>
-		</div>
-	</main>
-</div>
+			{/each}
+		</tbody>
+	</table>
+	<div class="bill-in-words">
+		<em>
+			{ntw.toWords(invoice.items.map((item) => item.price * item.amount).reduce(add, 0))}
+			<strong>{invoice.items[0].currency}</strong>
+		</em>
+	</div>
+</main>
 
 <style lang="scss">
 	* {
 		font-family: monospace;
 		box-sizing: border-box;
-	}
-	.container {
-		max-width: 720px;
-		margin-inline: auto;
 	}
 	p {
 		margin: 0;

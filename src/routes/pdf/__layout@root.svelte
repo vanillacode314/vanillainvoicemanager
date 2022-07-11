@@ -10,7 +10,6 @@
 	main {
 		height: 100%;
 		margin-inline: auto;
-		max-width: 1080px;
 		padding: 0.5rem;
 		display: flex;
 		gap: 1rem;
