@@ -96,10 +96,6 @@
 </main>
 
 <style lang="scss">
-	* {
-		font-family: monospace;
-		box-sizing: border-box;
-	}
 	p {
 		margin: 0;
 	}
@@ -147,6 +143,7 @@
 		width: 100%;
 		border-collapse: collapse;
 		td {
+			border: 1px solid black;
 			padding: 0.3rem 0.5rem;
 			margin: 0;
 		}
@@ -161,7 +158,6 @@
 		}
 		tbody {
 			td {
-				border: 1px solid black;
 				&.break {
 					overflow-wrap: anywhere;
 				}
